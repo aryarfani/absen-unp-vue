@@ -18,6 +18,7 @@
             <th>Alamat</th>
             <th>Latitude</th>
             <th>Longitude</th>
+            <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -27,6 +28,11 @@
             <td>{{ location.address }}</td>
             <td>{{ location.latitude }}</td>
             <td>{{ location.longitude }}</td>
+            <td>
+              <button @click="deleteLokasi(location.id)" class="btn btn-danger">
+                Delete
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -44,13 +50,30 @@ export default {
       locations: []
     };
   },
-
-  mounted() {
-    UserService.getLocation().then(res => {
-      if (res.status == 200) {
-        this.locations = res.data;
+  methods: {
+    async deleteLokasi(id) {
+      if (confirm("Anda ingin menghapus ini ?")) {
+        UserService.deleteLocation(id).then(res => {
+          if (res.status == 200) {
+            this.fetchLocation();
+            this.$toasted.show("Lokasi berhasil dihapus", {
+              type: "success",
+              duration: 3000
+            });
+          }
+        });
       }
-    });
+    },
+    async fetchLocation() {
+      UserService.getLocation().then(res => {
+        if (res.status == 200) {
+          this.locations = res.data;
+        }
+      });
+    }
+  },
+  mounted() {
+    this.fetchLocation();
   }
 };
 </script>

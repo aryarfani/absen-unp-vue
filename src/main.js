@@ -8,8 +8,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap";
 
 import axios from "axios";
-const API_URL = "https://absen-unp.000webhostapp.com/api/";
-// const API_URL = "http://localhost/laravel/absen-unp/public/api/";
+// const API_URL = "https://absen-unp.000webhostapp.com/api/";
+const API_URL = "http://localhost/laravel/absen-unp/public/api/";
 
 axios.defaults.baseURL = API_URL;
 

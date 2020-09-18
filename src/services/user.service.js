@@ -26,6 +26,12 @@ class UserService {
       "Content-Type": "multipart/form-data"
     });
   }
+  deleteLocation(id) {
+    return axios.delete("/admin/location/" + id, {
+      headers: authHeader(),
+      "Content-Type": "multipart/form-data"
+    });
+  }
 }
 
 export default new UserService();

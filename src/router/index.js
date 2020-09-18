@@ -11,9 +11,6 @@ import Mahasiswa from "@/views/mahasiswa/Mahasiswa.vue";
 import AddMahasiswas from "@/views/mahasiswa/AddMahasiswa.vue";
 import EditMahasiswa from "@/views/mahasiswa/EditMahasiswa.vue";
 
-import Admin from "@/views/admin/Admin.vue";
-import EditAdmin from "@/views/admin/EditAdmin.vue";
-
 import Kehadiran from "@/views/kehadiran/Kehadiran.vue";
 import Login from "@/views/auth/Login.vue";
 import Register from "@/views/auth/Register.vue";
@@ -62,11 +59,6 @@ const routes = [
     name: "mahasiswa",
     component: Mahasiswa
   },
-  {
-    path: "/admin",
-    name: "admin",
-    component: Admin
-  },
 
   {
     path: "/add-mahasiswa",
@@ -82,11 +74,6 @@ const routes = [
     path: "/add-lokasi",
     name: "addLokasi",
     component: AddLokasi
-  },
-  {
-    path: "/edit-admin",
-    name: "editAdmin",
-    component: EditAdmin
   }
 ];
 

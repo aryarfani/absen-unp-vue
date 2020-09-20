@@ -26,8 +26,7 @@
             <td>
               <img
                 :src="
-                  'http://192.168.0.105/laravel/absen-unp/public/images/' +
-                    mahasiswa.gambar
+                  'https://absen-unp.herokuapp.com/images/' + mahasiswa.gambar
                 "
                 alt=""
               />

@@ -6,7 +6,7 @@ class UserService {
     return axios.get("/admin/cuti", { headers: authHeader() });
   }
   confirmCuti(id) {
-    return axios.post(`/admin/cuti/${id}`, { headers: authHeader() });
+    return axios.patch("/admin/cuti/" + id, "", { headers: authHeader() });
   }
   getMahasiswa() {
     return axios.get("/admin/user", { headers: authHeader() });

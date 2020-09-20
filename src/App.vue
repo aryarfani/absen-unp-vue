@@ -24,7 +24,7 @@ export default {
 <style>
 .main {
   position: relative;
-  margin-left: 210px;
+  margin-left: 100px;
 }
 img {
   width: 60px;
@@ -32,21 +32,9 @@ img {
   object-fit: cover;
 }
 
-.table {
-  width: 1%;
-}
-
 @media only screen and (max-width: 768px) {
-  /* .table {
-    white-space: nowrap;
-  } */
-
-  .sidebar {
-    display: none;
-  }
-
   .main {
-    margin-left: 0;
+    margin-left: 50px;
   }
 }
 </style>

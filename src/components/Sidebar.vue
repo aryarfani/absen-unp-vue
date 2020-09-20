@@ -1,5 +1,8 @@
 <template>
   <div class="sidebar shadow">
+    <span class="mr-3 material-icons text-white menu-button">
+      dashboard
+    </span>
     <div class="left-sidebar">
       <ul class="nav flex-column sidebar-nav">
         <li class="navbar-brand pb-0" id="brand">
@@ -68,6 +71,50 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      isSidebarOpen: false
+    };
+  },
+
+  methods: {
+    openSidebar() {
+      console.log("çlicked");
+      let viewportWidth =
+        window.innerWidth || document.documentElement.clientWidth;
+      console.log(viewportWidth);
+
+      if (!this.isSidebarOpen) {
+        this.isSidebarOpen = true;
+
+        document.getElementsByClassName("left-sidebar")[0].style.display =
+          "block";
+        document.getElementsByClassName("menu-button")[0].style.visibility =
+          "hidden";
+        document.getElementsByClassName("sidebar")[0].style.width = "310px";
+      } else {
+        this.isSidebarOpen = false;
+
+        document.getElementsByClassName("left-sidebar")[0].style.display =
+          "none";
+        document.getElementsByClassName("menu-button")[0].style.visibility =
+          "visible";
+        document.getElementsByClassName("sidebar")[0].style.width = "50px";
+      }
+    }
+  },
+  mounted() {
+    document
+      .getElementsByClassName("sidebar")[0]
+      .addEventListener("click", this.openSidebar);
+
+    this.openSidebar();
+  }
+};
+</script>
+
 <style scoped>
 #brand span {
   font-size: 50px;
@@ -92,6 +139,7 @@ hr {
   top: 0;
   z-index: 100;
   width: 210px;
+  transition: 0.3s;
   padding: 10px 0 0 10px;
   background-color: #2f55c8f6;
   border-right: 1px solid #d3d3d3;

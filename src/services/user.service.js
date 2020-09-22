@@ -32,6 +32,15 @@ class UserService {
       "Content-Type": "multipart/form-data"
     });
   }
+  getJadwal() {
+    return axios.get("/admin/jadwal", { headers: authHeader() });
+  }
+  updateJadwal(data) {
+    return axios.patch("/admin/jadwal", data, {
+      headers: authHeader(),
+      "Content-Type": "multipart/form-data"
+    });
+  }
 }
 
 export default new UserService();

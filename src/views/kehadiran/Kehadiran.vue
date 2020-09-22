@@ -11,19 +11,40 @@
         <thead class="thead-light">
           <tr>
             <th>No</th>
+            <th>Tanggal</th>
             <th>Nama</th>
             <th>Lokasi</th>
+            <th>Status</th>
+            <th>Telat / Lembur</th>
             <th>IMEI</th>
-            <th>Tanggal</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(kehadiran, index) in kehadirans" :key="kehadiran.id">
             <th>{{ index + 1 }}</th>
+            <td>{{ kehadiran.created_at }}</td>
             <td>{{ kehadiran.name }}</td>
             <td>{{ kehadiran.location }}</td>
+            <td>
+              <p class="badge badge-warning" v-if="kehadiran.status == 0">
+                Pulang
+              </p>
+              <p class="badge badge-success" v-if="kehadiran.status == 1">
+                Hadir
+              </p>
+            </td>
+            <td v-if="kehadiran.keterlambatan > 0">
+              {{ Math.floor(kehadiran.keterlambatan / 60) }} jam
+              {{
+                Math.round(
+                  (kehadiran.keterlambatan / 60 -
+                    Math.floor(kehadiran.keterlambatan / 60)) *
+                    60
+                )
+              }}
+              menit
+            </td>
             <td>{{ kehadiran.imei }}</td>
-            <td>{{ kehadiran.created_at }}</td>
           </tr>
         </tbody>
       </table>

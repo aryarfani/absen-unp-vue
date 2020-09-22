@@ -59,6 +59,14 @@
           </router-link>
         </li>
         <li class="nav-item mt-3">
+          <router-link to="/jadwal" class="nav-link d-inline-flex" href="#">
+            <span class="mr-3 material-icons">
+              query_builder
+            </span>
+            Jadwal
+          </router-link>
+        </li>
+        <li class="nav-item mt-3">
           <router-link to="/profile" class="nav-link d-inline-flex" href="#">
             <span class="mr-3 material-icons">
               account_circle
@@ -75,7 +83,7 @@
 export default {
   data() {
     return {
-      isSidebarOpen: false
+      isSidebarOpen: true
     };
   },
 

@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "@/views/home/Home.vue";
 
 import Cuti from "@/views/cuti/Cuti.vue";
+import Jadwal from "@/views/jadwal/Jadwal.vue";
 
 import Lokasi from "@/views/lokasi/Lokasi.vue";
 import AddLokasi from "@/views/lokasi/AddLokasi.vue";
@@ -23,6 +24,11 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home
+  },
+  {
+    path: "/jadwal",
+    name: "jadwal",
+    component: Jadwal
   },
   {
     path: "/cuti",

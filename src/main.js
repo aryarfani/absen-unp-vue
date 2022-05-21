@@ -9,8 +9,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap";
 
 import axios from "axios";
-const API_URL = "https://absen-unp.herokuapp.com/api/";
-// const API_URL = "http://localhost/laravel/absen-heroku/public/api/";
+// const API_URL = "https://absen-unp.herokuapp.com/api/";
+const API_URL = "https://absen-unp.arfani.my.id/api/";
 
 axios.defaults.baseURL = API_URL;
 

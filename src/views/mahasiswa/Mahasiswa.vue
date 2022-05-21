@@ -26,9 +26,8 @@
             <td>
               <img
                 :src="
-                  'https://absen-unp.herokuapp.com/images/' + mahasiswa.gambar
+                  'https://absen-unp.arfani.my.id/images/' + mahasiswa.gambar
                 "
-                alt=""
               />
             </td>
             <td>{{ mahasiswa.email }}</td>

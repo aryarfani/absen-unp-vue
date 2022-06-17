@@ -12,7 +12,7 @@
             <label for="name">Name</label>
             <input
               v-model="user.name"
-              v-validate="'required|min:3|max:20'"
+              v-validate="'required'"
               type="text"
               class="form-control"
               name="name"
@@ -25,7 +25,7 @@
             <label for="email">Email</label>
             <input
               v-model="user.email"
-              v-validate="'required|email|max:50'"
+              v-validate="'required|email'"
               type="email"
               class="form-control"
               name="email"
@@ -51,7 +51,7 @@
             <label for="password">Password</label>
             <input
               v-model="user.password"
-              v-validate="'required|min:6|max:40'"
+              v-validate="'required|min:5'"
               type="password"
               class="form-control"
               name="password"
